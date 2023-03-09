@@ -1,6 +1,8 @@
 {
     "name": "hexlet/code",
-    "description": "hexlet_code",
+    "bin": ["bin/brain-games"],
+    "description": "my project",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -8,7 +10,7 @@
     },
     "authors": [
         {
-            "name": "albern"
+            "name": "albern79"
         }
     ],
     "require": {}
