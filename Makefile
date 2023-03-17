@@ -9,3 +9,5 @@ brain-games: # запустить программу
 validate: # проверить файл
 	composer validate
 
+lint: # запустить phpcs
+	composer exec --verbose phpcs -- --standard=PSR12 src bin

@@ -1,4 +1,5 @@
 #!/usr/bin/env php
+
 <?php
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
@@ -12,4 +13,3 @@ if (file_exists($autoloadPath1)) {
 use function Php\Project\Cli\welcome;
 
 welcome();
-
