@@ -11,3 +11,6 @@ validate: # проверить файл
 
 lint: # запустить phpcs
 	composer exec --verbose phpcs -- --standard=PSR12 src bin
+
+brain-even: #запустить программа проверка на четность
+	./bin/brain-even
