@@ -1,13 +1,16 @@
 {
     "name": "hexlet/code",
     "bin": ["bin/brain-games",
-            "bin/brain-even"],
+            "bin/brain-even",
+            "bin/brain-calc"],
     "description": "my project",
     "license": "MIT",
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/paritygame.php"
+            "src/games/paritygame.php",
+            "src/games/calc.php",
+            "src/Engine.php"
         ],
         "psr-4": {
             "Php\\Project\\": "src/"

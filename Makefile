@@ -14,3 +14,6 @@ lint: # запустить phpcs
 
 brain-even: #запустить программа проверка на четность
 	./bin/brain-even
+
+brain-calc: # запустить программу калькулятор
+	./bin/brain-calc

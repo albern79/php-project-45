@@ -4,3 +4,5 @@
 <a href="https://codeclimate.com/github/albern79/php-project-45/maintainability"><img src="https://api.codeclimate.com/v1/badges/0d5503cefe5420433e11/maintainability" /></a>
 
 https://asciinema.org/a/Li8vYhEWKbM99vDtjhNiDNKLA
+
+https://asciinema.org/a/ShBkG5mNSpJ8IYdmQMi15DxbZ

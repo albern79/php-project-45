@@ -1,35 +1,36 @@
 <?php
-namespace Php\Project\Paritygame;
+namespace Php\Project\Games\Paritygame;
 
 use function cli\line;
 use function cli\prompt;
+
+use function Php\Project\Engine\operation;
+use function Php\Project\Engine\welcome;
 /**
  * Функция проверки на четность.
  */
 function parity()
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $name = welcome();
     line('Answer "yes" if the number is even, otherwise answer "no"');
     $i = 0;
     while ($i != 3) {
         $num = rand(1, 20);
         line('Question: %s', $num);
         $answer = prompt('Your answer');
-        if (($num % 2 == 0 & $answer == 'yes') or $num % 2 != 0 & $answer == 'no') {
+        if (($num % 2 == 0 & $answer == 'yes') or ($num % 2 != 0 & $answer == 'no')) {
             echo "Correct!\n";
             $i++;
         } else {
-            if ($answer == 'yes') {
-                line("'yes' is wrong answer ;(.");
-                line("Let try again, %s", $name);
-                break;
+            if ($num % 2 == 0 & $answer == 'no') {
+                $value = 'no';
+                $goodanswer = 'yes';
             } else {
-                line("Correct answer was 'no'");
-                line("Let's try again, %s", $name);
-                break;
+                $value = 'yes';
+                $goodanswer = 'no';
             }
+            operation($goodanswer, $value, $name);
+            break;
         }
     }
     if ($i == 3) {
