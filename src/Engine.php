@@ -17,5 +17,14 @@ function operation($answer, $value, $name)
     line(" '%s' is wrong answer", $answer);
     line("Correct answer was '%s'", $value);
     line("Let's try again, %s", $name);
-
+}
+function nod($a, $b) {
+    while ($a != $b) {
+        if ($a > $b) {
+            $a -= $b;
+        } else {
+            $b -= $a;
+        }
+    }
+    return $a;
 }

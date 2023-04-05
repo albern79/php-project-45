@@ -2,7 +2,8 @@
     "name": "hexlet/code",
     "bin": ["bin/brain-games",
             "bin/brain-even",
-            "bin/brain-calc"],
+            "bin/brain-calc",
+            "bin/brain-gcd"],
     "description": "my project",
     "license": "MIT",
     "autoload": {
@@ -10,6 +11,7 @@
             "src/Cli.php",
             "src/games/paritygame.php",
             "src/games/calc.php",
+            "src/games/gcd.php",
             "src/Engine.php"
         ],
         "psr-4": {
