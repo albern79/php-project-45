@@ -20,3 +20,6 @@ brain-calc: # запустить программу калькулятор
 
 brain-gcd: #запустить программу нод
 	./bin/brain-gcd
+
+brain-progression: #запустить программу аривметическая прогрессия
+	./bin/brain-progression
