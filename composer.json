@@ -4,7 +4,8 @@
             "bin/brain-even",
             "bin/brain-calc",
             "bin/brain-gcd",
-            "bin/brain-progression"],
+            "bin/brain-progression",
+            "bin/brain-prime"],
     "description": "my project",
     "license": "MIT",
     "autoload": {
@@ -14,7 +15,8 @@
             "src/games/calc.php",
             "src/games/gcd.php",
             "src/Engine.php",
-            "src/games/progression.php"
+            "src/games/progression.php",
+            "src/games/prime.php"
         ],
         "psr-4": {
             "Php\\Project\\": "src/"

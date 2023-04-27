@@ -28,7 +28,8 @@ function nod($a, $b) {
     }
     return $a;
 }
-function progression($num1, $num2) {
+function progression($num1, $num2)
+{
     $d = abs($num1 - $num2);
     if ($num1 < $num2) {
         $collect[0] = $num1;
@@ -42,4 +43,17 @@ function progression($num1, $num2) {
         $collect[$i] = $collect[$i - 1] + $d;
     }
     return $collect;
+}
+
+
+function isPrime($num)
+{
+    $flag = "yes";
+    for ($i = 2; $i < $num; $i++) {
+        if ($num % $i === 0) {
+            $flag = "no";
+            break;
+        }
+    }
+    return $flag;
 }

@@ -23,3 +23,6 @@ brain-gcd: #запустить программу нод
 
 brain-progression: #запустить программу аривметическая прогрессия
 	./bin/brain-progression
+
+brain-prime: #запустить програььу простое число
+	./bin/brain-prime
