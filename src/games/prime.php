@@ -10,7 +10,7 @@ use function Php\Project\Engine\isPrime;
 function prime()
 {
     $name = welcome();
-    line('Answer "yes" if given number is prime. Otherwise answer "no"');
+    line('Answer "yes" if given number is prime. Otherwise answer "no".');
     $i = 0;
     while ($i != 3) {
         $num = rand(1, 100);
