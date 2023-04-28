@@ -1,11 +1,12 @@
 <?php
+
 namespace Php\Project\Games\Paritygame;
 
 use function cli\line;
 use function cli\prompt;
-
 use function Php\Project\Engine\operation;
 use function Php\Project\Engine\welcome;
+
 /**
  * Функция проверки на четность.
  */
@@ -37,6 +38,3 @@ function parity()
         line('Congratulations, %s!', $name);
     }
 }
-
-
-

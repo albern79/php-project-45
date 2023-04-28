@@ -1,4 +1,5 @@
 <?php
+
 namespace Php\Project\Games\Progression;
 
 use function cli\line;
@@ -6,7 +7,6 @@ use function cli\prompt;
 use function Php\Project\Engine\operation;
 use function Php\Project\Engine\welcome;
 use function Php\Project\Engine\progression;
-
 
 function arifProgression()
 {

@@ -1,4 +1,5 @@
 <?php
+
 namespace Php\Project\Games\Calc;
 
 use function cli\line;

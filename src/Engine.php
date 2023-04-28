@@ -1,4 +1,5 @@
 <?php
+
 namespace Php\Project\Engine;
 
 use function cli\line;

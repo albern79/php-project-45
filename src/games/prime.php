@@ -1,4 +1,5 @@
 <?php
+
 namespace Php\Project\Games\Prime;
 
 use function cli\line;

@@ -1,8 +1,10 @@
 <?php
+
 namespace Php\Project\Cli;
 
 use function cli\line;
 use function cli\prompt;
+
 /**
  * Функция приветствия.
  */
