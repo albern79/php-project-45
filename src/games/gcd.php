@@ -11,7 +11,7 @@ use function Php\Project\Engine\nod;
 function gcd()
 {
     $name = welcome();
-    line("Find the greatest common divisor of given number");
+    line("Find the greatest common divisor of given numbers.");
     $i = 0;
     while ($i != 3) {
     $num1 = rand(1, 20);
