@@ -14,9 +14,9 @@ function welcome()
 
 function operation($answer, $value, $name)
 {
-    line(" '%s' is wrong answer", $answer);
+    line(" '%s' is wrong answer ;(", $answer);
     line("Correct answer was '%s'", $value);
-    line("Let's try again, %s", $name);
+    line("Let's try again, %s!", $name);
 }
 
 function nod($a, $b)
