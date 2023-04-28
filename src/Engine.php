@@ -18,7 +18,9 @@ function operation($answer, $value, $name)
     line("Correct answer was '%s'", $value);
     line("Let's try again, %s", $name);
 }
-function nod($a, $b) {
+
+function nod($a, $b)
+{
     while ($a != $b) {
         if ($a > $b) {
             $a -= $b;
@@ -28,6 +30,7 @@ function nod($a, $b) {
     }
     return $a;
 }
+
 function progression($num1, $num2)
 {
     $d = abs($num1 - $num2);
@@ -39,12 +42,11 @@ function progression($num1, $num2)
         $collect[1] = $num1;
     }
     $collect[] = $num2;
-    for($i = 2; $i < 10; $i++) {
+    for ($i = 2; $i < 10; $i++) {
         $collect[$i] = $collect[$i - 1] + $d;
     }
     return $collect;
 }
-
 
 function isPrime($num)
 {

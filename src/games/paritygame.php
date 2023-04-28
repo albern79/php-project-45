@@ -12,7 +12,7 @@ use function Php\Project\Engine\welcome;
 function parity()
 {
     $name = welcome();
-    line('Answer "yes" if the number is even, otherwise answer "no"');
+    line('Answer "yes" if the number is even, otherwise answer "no".');
     $i = 0;
     while ($i != 3) {
         $num = rand(1, 20);
