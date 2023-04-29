@@ -20,6 +20,10 @@ function operation($answer, $value, $name)
     line("Let's try again, %s!", $name);
 }
 
+/**
+ * @var int $a
+ * @var int $b
+ */
 function nod($a, $b)
 {
     while ($a != $b) {
