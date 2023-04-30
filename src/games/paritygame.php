@@ -19,11 +19,11 @@ function parity()
         $num = rand(1, 20);
         line('Question: %s', $num);
         $answer = prompt('Your answer');
-        if (($num % 2 === 0 & $answer === 'yes') or ($num % 2 != 0 & $answer === 'no')) {
+        if (($num % 2 == 0 & $answer == 'yes') or ($num % 2 != 0 & $answer == 'no')) {
             echo "Correct!\n";
             $i++;
         } else {
-            if ($num % 2 === 0 & $answer === 'no') {
+            if ($num % 2 == 0 & $answer == 'no') {
                 $value = 'no';
                 $goodanswer = 'yes';
             } else {
