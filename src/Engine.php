@@ -13,7 +13,7 @@ function welcome()
     return $name;
 }
 
-function operation($answer, $value, $name)
+function operation(mixed $answer, mixed $value, string $name)
 {
     line(" '%s' is wrong answer ;(", $answer);
     line("Correct answer was '%s'", $value);
