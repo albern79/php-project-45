@@ -20,11 +20,7 @@ function operation($answer, $value, $name)
     line("Let's try again, %s!", $name);
 }
 
-/**
- * @var int $a
- * @var int $b
- */
-function nod($a, $b)
+function nod(int $a, int $b)
 {
     while ($a != $b) {
         if ($a > $b) {
@@ -36,8 +32,9 @@ function nod($a, $b)
     return $a;
 }
 
-function progression($num1, $num2)
+function progression(int $num1, int $num2)
 {
+    $collect = [];
     $d = abs($num1 - $num2);
     if ($num1 < $num2) {
         $collect[0] = $num1;
@@ -53,6 +50,10 @@ function progression($num1, $num2)
     return $collect;
 }
 
+/**
+ * @param int $num
+ * @return string
+ */
 function isPrime($num)
 {
     $flag = "yes";
