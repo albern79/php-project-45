@@ -57,6 +57,10 @@ function progression(int $num1, int $num2)
 function isPrime($num)
 {
     $flag = "yes";
+    if ($num === 1) {
+        $flag = "no";
+        return $flag;
+    }
     for ($i = 2; $i < $num; $i++) {
         if ($num % $i === 0) {
             $flag = "no";
