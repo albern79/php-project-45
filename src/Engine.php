@@ -13,14 +13,15 @@ function welcome()
     return $name;
 }
 
-function getWrongAnswer($answer, $value, string $name)
+/*function getWrongAnswer($answer, $value, string $name)
 {
     line(" '%s' is wrong answer ;(", $answer);
     line("Correct answer was '%s'", $value);
     line("Let's try again, %s!", $name);
 }
+*/
 
-function getEngine($arrayAnswersQuestions, $lineQuestion)
+function getEngine(array $arrayAnswersQuestions, string $lineQuestion)
 {
     $name = welcome();
     line($lineQuestion);
@@ -30,7 +31,9 @@ function getEngine($arrayAnswersQuestions, $lineQuestion)
         if ($answer == $value[1]) {
             echo "Correct!\n";
         } else {
-            getWrongAnswer($answer, $value[0], $name);
+            line(" '%s' is wrong answer ;(", $answer);
+            line("Correct answer was '%s'", $value);
+            line("Let's try again, %s!", $name);
             return false;
         }
     }

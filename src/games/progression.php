@@ -35,6 +35,7 @@ function getCollectProgression()
 function arifProgression()
 {
     $lineQuestion = "What number is missing in the progression";
+    $answersProgression = [];
     $i = 0;
     while ($i != 3) {
         $collect = getCollectProgression();
