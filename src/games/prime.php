@@ -35,11 +35,10 @@ function getPrime()
     $lineQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $answersPrime = [];
     for ($i = 0; $i < 3; $i++) {
-        $number = rand(1, 100);   
+        $number = rand(1, 100);
         $value = isPrime($number);
         // собираем массив из трех чисел и ответов на четность
         $answersPrime[] = [$number, $value];
     }
-    
     getEngine($answersPrime, $lineQuestion);
 }

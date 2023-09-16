@@ -8,22 +8,22 @@ use function Php\Project\Engine\getEngine;
  * Функция получения коллекции арифметической прогрессии
  */
 
-function getProgression()
+function getCollectProgression()
 {
-    $num1 = rand(1, 10);
-    $num2 = rand(1, 10);
+    $valueOne = rand(1, 10);
+    $valueTwo = rand(1, 10);
     $collect = [];
-    $d = abs($num1 - $num2);
-    if ($num1 < $num2) {
-        $collect[0] = $num1;
-        $collect[1] = $num2;
+    $differenceProgression = abs($valueOne - $valueTwo);
+    if ($valueOne < $valueTwo) {
+        $collect[0] = $valueOne;
+        $collect[1] = $valueTwo;
     } else {
-        $collect[0] = $num2;
-        $collect[1] = $num1;
+        $collect[0] = $valueTwo;
+        $collect[1] = $valueOne;
     }
-    $collect[] = $num2;
+    $collect[] = $valueTwo;
     for ($i = 2; $i < 10; $i++) {
-        $collect[$i] = $collect[$i - 1] + $d;
+        $collect[$i] = $collect[$i - 1] + $differenceProgression;
     }
     return $collect;
 }
@@ -37,7 +37,7 @@ function arifProgression()
     $lineQuestion = "What number is missing in the progression";
     $i = 0;
     while ($i != 3) {
-        $collect = getProgression();
+        $collect = getCollectProgression();
         $index = rand(0, 9);
         $value = $collect[$index];
         $collect[$index] = '..';
@@ -46,5 +46,5 @@ function arifProgression()
         $answersProgression[] = [$strCollect, $value];
         $i++;
     }
-getEngine($answersProgression, $lineQuestion);
+    getEngine($answersProgression, $lineQuestion);
 }

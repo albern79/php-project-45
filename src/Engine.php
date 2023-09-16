@@ -13,7 +13,7 @@ function welcome()
     return $name;
 }
 
-function getWrongAnswer(mixed $answer, mixed $value, string $name)
+function getWrongAnswer($answer, $value, string $name)
 {
     line(" '%s' is wrong answer ;(", $answer);
     line("Correct answer was '%s'", $value);
@@ -36,4 +36,3 @@ function getEngine($arrayAnswersQuestions, $lineQuestion)
     }
     line('Congratulations, %s!', $name);
 }
-
