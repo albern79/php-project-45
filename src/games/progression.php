@@ -2,37 +2,49 @@
 
 namespace Php\Project\Games\Progression;
 
-use function cli\line;
-use function cli\prompt;
-use function Php\Project\Engine\operation;
-use function Php\Project\Engine\welcome;
-use function Php\Project\Engine\progression;
+use function Php\Project\Engine\getEngine;
+
+/**
+ * Функция получения коллекции арифметической прогрессии
+ */
+
+function getProgression()
+{
+    $num1 = rand(1, 10);
+    $num2 = rand(1, 10);
+    $collect = [];
+    $d = abs($num1 - $num2);
+    if ($num1 < $num2) {
+        $collect[0] = $num1;
+        $collect[1] = $num2;
+    } else {
+        $collect[0] = $num2;
+        $collect[1] = $num1;
+    }
+    $collect[] = $num2;
+    for ($i = 2; $i < 10; $i++) {
+        $collect[$i] = $collect[$i - 1] + $d;
+    }
+    return $collect;
+}
+
+/**
+ * Функция запуска игры арифметическая прогрессия
+ */
 
 function arifProgression()
 {
-    $name = welcome();
-    line("What number is missing in the progression");
+    $lineQuestion = "What number is missing in the progression";
     $i = 0;
     while ($i != 3) {
-        $num1 = rand(1, 10);
-        $num2 = rand(1, 10);
-        $collect = progression($num1, $num2);
+        $collect = getProgression();
         $index = rand(0, 9);
         $value = $collect[$index];
         $collect[$index] = '..';
         $strCollect = implode(' ', $collect);
-        line("Question: %s", $strCollect);
-        //$value = nod($num1, $num2);
-        $answer = prompt("Your answer");
-        if ($answer == $value) {
-            echo "Correct!\n";
-            $i++;
-        } else {
-            operation($answer, $value, $name);
-            break;
-        }
+        // собираем массив из трех выражений и их ответов
+        $answersProgression[] = [$strCollect, $value];
+        $i++;
     }
-    if ($i == 3) {
-        line('Congratulations, %s!', $name);
-    }
+getEngine($answersProgression, $lineQuestion);
 }

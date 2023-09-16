@@ -13,59 +13,27 @@ function welcome()
     return $name;
 }
 
-function operation(mixed $answer, mixed $value, string $name)
+function getWrongAnswer(mixed $answer, mixed $value, string $name)
 {
     line(" '%s' is wrong answer ;(", $answer);
     line("Correct answer was '%s'", $value);
     line("Let's try again, %s!", $name);
 }
 
-function nod(int $a, int $b)
+function getEngine($arrayAnswersQuestions, $lineQuestion)
 {
-    while ($a != $b) {
-        if ($a > $b) {
-            $a -= $b;
+    $name = welcome();
+    line($lineQuestion);
+    foreach ($arrayAnswersQuestions as $value) {
+        line('Question: %s', $value[0]);
+        $answer = prompt('Your answer');
+        if ($answer == $value[1]) {
+            echo "Correct!\n";
         } else {
-            $b -= $a;
+            getWrongAnswer($answer, $value[0], $name);
+            return false;
         }
     }
-    return $a;
+    line('Congratulations, %s!', $name);
 }
 
-function progression(int $num1, int $num2)
-{
-    $collect = [];
-    $d = abs($num1 - $num2);
-    if ($num1 < $num2) {
-        $collect[0] = $num1;
-        $collect[1] = $num2;
-    } else {
-        $collect[0] = $num2;
-        $collect[1] = $num1;
-    }
-    $collect[] = $num2;
-    for ($i = 2; $i < 10; $i++) {
-        $collect[$i] = $collect[$i - 1] + $d;
-    }
-    return $collect;
-}
-
-/**
- * @param int $num
- * @return string
- */
-function isPrime($num)
-{
-    $flag = "yes";
-    if ($num === 1) {
-        $flag = "no";
-        return $flag;
-    }
-    for ($i = 2; $i < $num; $i++) {
-        if ($num % $i === 0) {
-            $flag = "no";
-            break;
-        }
-    }
-    return $flag;
-}

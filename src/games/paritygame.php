@@ -2,39 +2,30 @@
 
 namespace Php\Project\Games\Paritygame;
 
-use function cli\line;
-use function cli\prompt;
-use function Php\Project\Engine\operation;
-use function Php\Project\Engine\welcome;
+use function Php\Project\Engine\getEngine;
 
 /**
- * Функция проверки на четность.
+ * Функция получения трех значений и их проверок на четность
  */
+
+ function getThreeAnswersEven()
+ {
+    $answerEven = [];
+     for($i = 0; $i < 3; $i++) {
+         $num = rand(1, 20);
+         // собираем в массив значения и ответы       
+         $answerEven[] = (($num % 2) == 0) ? [$num, 'yes'] : [$num, 'no'];
+         }
+     return $answerEven;
+ }
+
+ /**
+ * Функция запуска игры четное нечетное
+ */
+
 function parity()
 {
-    $name = welcome();
-    line('Answer "yes" if the number is even, otherwise answer "no".');
-    $i = 0;
-    while ($i != 3) {
-        $num = rand(1, 20);
-        line('Question: %s', $num);
-        $answer = prompt('Your answer');
-        if ((($num % 2) == 0 && $answer == 'yes') or (($num % 2) != 0 && $answer == 'no')) {
-            echo "Correct!\n";
-            $i++;
-        } else {
-            if (($num % 2 == 0) && $answer == 'no') {
-                $value = 'no';
-                $goodanswer = 'yes';
-            } else {
-                $value = 'yes';
-                $goodanswer = 'no';
-            }
-            operation($goodanswer, $value, $name);
-            break;
-        }
-    }
-    if ($i == 3) {
-        line('Congratulations, %s!', $name);
-    }
+    $lineQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $answersEven = getThreeAnswersEven();
+    getEngine($answersEven, $lineQuestion);
 }

@@ -3,30 +3,43 @@
 namespace Php\Project\Games\Prime;
 
 use function cli\line;
-use function cli\prompt;
-use function Php\Project\Engine\operation;
-use function Php\Project\Engine\welcome;
-use function Php\Project\Engine\isPrime;
+use function Php\Project\Engine\getEngine;
 
-function prime()
+/**
+ * @param int $number
+ * @return string
+ * проверка на четность
+ */
+function isPrime(int $number)
 {
-    $name = welcome();
-    line('Answer "yes" if given number is prime. Otherwise answer "no".');
-    $i = 0;
-    while ($i != 3) {
-        $num = rand(1, 100);
-        line('Question: %s', $num);
-        $answer = prompt('Your answer');
-        $value = isPrime($num);
-        if ($answer == $value) {
-            echo "Correct!\n";
-            $i++;
-        } else {
-            operation($answer, $value, $name);
+    $flag = "yes";
+    if ($number === 1) {
+        $flag = "no";
+        return $flag;
+    }
+    for ($i = 2; $i < $number; $i++) {
+        if ($number % $i === 0) {
+            $flag = "no";
             break;
         }
     }
-    if ($i == 3) {
-        line('Congratulations, %s!', $name);
+    return $flag;
+}
+
+/**
+ * Функция запуска игры проверки на четность
+ */
+
+function getPrime()
+{
+    $lineQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    $answersPrime = [];
+    for ($i = 0; $i < 3; $i++) {
+        $number = rand(1, 100);   
+        $value = isPrime($number);
+        // собираем массив из трех чисел и ответов на четность
+        $answersPrime[] = [$number, $value];
     }
+    
+    getEngine($answersPrime, $lineQuestion);
 }
