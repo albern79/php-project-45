@@ -13,14 +13,6 @@ function welcome()
     return $name;
 }
 
-/*function getWrongAnswer($answer, $value, string $name)
-{
-    line(" '%s' is wrong answer ;(", $answer);
-    line("Correct answer was '%s'", $value);
-    line("Let's try again, %s!", $name);
-}
-*/
-
 function getEngine(array $arrayAnswersQuestions, string $lineQuestion)
 {
     $name = welcome();
